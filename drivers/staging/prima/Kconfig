@@ -11,3 +11,7 @@ config PRONTO_WLAN
 	default n
 	help
 	  Add support for the Qualcomm Atheros Pronto WLAN module
+
+config WLAN_FEATURE_HOLD_RX_WAKELOCK
+	bool "Enable hold RX wake lock feature"
+	default n
