@@ -9401,6 +9401,19 @@ static int __init isolated_cpu_setup(char *str)
 
 __setup("isolcpus=", isolated_cpu_setup);
 
+static const struct cpumask *cpu_cpu_mask(int cpu)
+{
+	return cpumask_of_node(cpu_to_node(cpu));
+}
+
+int sched_smt_power_savings = 0, sched_mc_power_savings = 4;
+
+struct sd_data {
+	struct sched_domain **__percpu sd;
+	struct sched_group **__percpu sg;
+	struct sched_group_power **__percpu sgp;
+};
+
 struct s_data {
 	struct sched_domain ** __percpu sd;
 	struct root_domain	*rd;
