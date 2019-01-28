@@ -1,8 +1,13 @@
 /* DTS_EAGLE START */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1fce5dc2b888... drivers: import of dts_eagle hardware driver
 #ifndef DTS_EAGLE_DRV_H
 #define DTS_EAGLE_DRV_H
 
 
+<<<<<<< HEAD
 #include <linux/ioctl.h>
 #include <linux/printk.h>
 
@@ -20,11 +25,18 @@
 #define dts_eagle_drv_dbg_msg(fmt, ...) \
     (no_printk(KERN_INFO "DTS_EAGLE_DRIVER: " fmt "\n", ##__VA_ARGS__))
 #endif
+=======
+#include <linux/compat.h>
+#include <linux/ioctl.h>
+>>>>>>> 1fce5dc2b888... drivers: import of dts_eagle hardware driver
 
 #define EAGLE_DRIVER_ID 0xF2
 
 #ifdef CONFIG_COMPAT
+<<<<<<< HEAD
 #include <linux/compat.h>
+=======
+>>>>>>> 1fce5dc2b888... drivers: import of dts_eagle hardware driver
     #define DTS_EAGLE_COMPAT_IOCTL_GET_CACHE_SIZE           _IOR(EAGLE_DRIVER_ID, 0, __s32)
     #define DTS_EAGLE_COMPAT_IOCTL_SET_CACHE_SIZE           _IOW(EAGLE_DRIVER_ID, 1, __s32)
     #define DTS_EAGLE_COMPAT_IOCTL_GET_PARAM                _IOR(EAGLE_DRIVER_ID, 2, compat_uptr_t)
@@ -63,12 +75,15 @@ struct dts_eagle_param_desc {
 	uint32_t        size;
 	int32_t         offset;
 	uint32_t        device;
+<<<<<<< HEAD
 	uint32_t        rate;
 } __packed;
 
 struct dts_eagle_cache_block {
        uint32_t rate;
        void *data;
+=======
+>>>>>>> 1fce5dc2b888... drivers: import of dts_eagle hardware driver
 } __packed;
 
 #endif
