@@ -746,6 +746,9 @@ else
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-but-set-variable)
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-const-variable)
 endif
+# Disable -Wmisleading-indentation, kernel developers should be that experienced
+# to know how and when to use statement indentations.
+KBUILD_CFLAGS += $(call cc-disable-warning, misleading-indentation)
 
 ifdef CONFIG_FRAME_POINTER
 KBUILD_CFLAGS	+= -fno-omit-frame-pointer -fno-optimize-sibling-calls
