@@ -1914,7 +1914,14 @@
 /* GPU overrides */
 &msm_gpu {
 
+	qcom,restrict-pwrlevel = <1>;
+	/delete-property/qcom,gpu-speed-bin;
+	/delete-property/qcom,gpu-quirk-lmloadkill-disable;
 	qcom,gpu-speed-bin = <0x6018 0x80000000 31>;
+
+	/delete-property/qcom,initial-pwrlevel;
+	/delete-node/qcom,gpu-pwrlevel-bins;
+	/delete-node/qcom,gpu-pwrlevels;
 
 	qcom,gpu-pwrlevel-bins {
 		#address-cells = <1>;
