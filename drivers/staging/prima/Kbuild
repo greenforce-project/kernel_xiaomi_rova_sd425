@@ -756,8 +756,16 @@ EXTRA_CFLAGS += $(call cc-disable-warning,non-literal-null-conversion,)
 EXTRA_CFLAGS += $(call cc-disable-warning,typedef-redefinition,)
 endif
 
+# Cflags for GCC and Clang
+ifeq ($(cc-name),clang)
+EXTRA_CFLAGS += -Wno-uninitialized -Wno-unused-variable
+else
+EXTRA_CFLAGS += -Wno-maybe-unitialized -Wno-unused-function -Wno-unused-variable
+endif
+
 # Supress clang warning
 subdir-ccflags-y += \
+	-Wno-uninitialized \
 	-Wno-array-bounds \
 	-Wno-empty-body \
 	-Wno-enum-conversion \
