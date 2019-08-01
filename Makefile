@@ -658,6 +658,14 @@ ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
 else
 ifeq ($(cc-name),clang)
+KBUILD_CFLAGS	+= -mllvm -polly \
+		   -mllvm -polly-run-dce \
+		   -mllvm -polly-run-inliner \
+		   -mllvm -polly-opt-fusion=max \
+		   -mllvm -polly-ast-use-context \
+		   -mllvm -polly-detect-keep-going \
+		   -mllvm -polly-vectorizer=stripmine \
+		   -mllvm -polly-invariant-load-hoisting
 KBUILD_CFLAGS	+= -O3
 else
 KBUILD_CFLAGS	+= -O2
