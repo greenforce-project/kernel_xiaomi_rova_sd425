@@ -33,7 +33,7 @@ struct cpu_sync {
 
 static DEFINE_PER_CPU(struct cpu_sync, sync_info);
 
-static unsigned int input_boost_enabled = 1;
+static unsigned int input_boost_enabled = 0;
 module_param(input_boost_enabled, uint, 0644);
 
 static unsigned int input_boost_ms = 0;
@@ -44,7 +44,7 @@ static int dynamic_stune_boost;
 module_param(dynamic_stune_boost, uint, 0644);
 static bool stune_boost_active;
 static int boost_slot;
-static unsigned int dynamic_stune_boost_ms = 40;
+static unsigned int dynamic_stune_boost_ms = 0;
 module_param(dynamic_stune_boost_ms, uint, 0644);
 static struct delayed_work dynamic_stune_boost_rem;
 #endif /* CONFIG_DYNAMIC_STUNE_BOOST */
