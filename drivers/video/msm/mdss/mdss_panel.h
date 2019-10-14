@@ -34,9 +34,9 @@ enum fps_resolution {
 	FPS_RESOLUTION_KHZ,
 };
 
-#define DEFAULT_FRAME_RATE	63
+#define DEFAULT_FRAME_RATE	60
 #define DEFAULT_ROTATOR_FRAME_RATE 120
-#define ROTATOR_LOW_FRAME_RATE 45
+#define ROTATOR_LOW_FRAME_RATE 40
 #define MDSS_DSI_RST_SEQ_LEN	10
 /* worst case prefill lines for all chipsets including all vertical blank */
 #define MDSS_MDP_MAX_PREFILL_FETCH 25
