@@ -910,7 +910,7 @@ static void write_default_values(struct cgroup_subsys_state *css)
 	const int boost_values[4] = { 0, 1, 0, 0 };
 	const bool prefer_idle_values[4] = { 0, 1, 1, 0 };
 #ifdef CONFIG_DYNAMIC_STUNE_BOOST
-	const bool sched_boost_values[4] = { 0, 1, 0, 0 };
+	const bool sched_boost_values[4] = { 0, 0, 0, 0 };
 #endif // CONFIG_DYNAMIC_STUNE_BOOST
 	const char *stune_groups[] =
 	{ "/", "top-app", "foreground", "background" };
