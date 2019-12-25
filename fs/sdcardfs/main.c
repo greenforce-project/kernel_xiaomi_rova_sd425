@@ -50,7 +50,6 @@ static const match_table_t sdcardfs_tokens = {
 	{Opt_default_normal, "default_normal"},
 	{Opt_unshared_obb, "unshared_obb"},
 	{Opt_reserved_mb, "reserved_mb=%u"},
-	{Opt_nocache, "nocache"},
 	{Opt_err, NULL}
 };
 
