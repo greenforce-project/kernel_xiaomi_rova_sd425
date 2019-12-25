@@ -232,12 +232,6 @@ static int scsi_bus_restore(struct device *dev)
 
 #ifdef CONFIG_PM_RUNTIME
 
-static int do_scsi_runtime_suspend(struct device *dev,
-				   const struct dev_pm_ops *pm)
-{
-	return pm && pm->runtime_suspend ? pm->runtime_suspend(dev) : 0;
-}
-
 static int do_scsi_runtime_resume(struct device *dev,
 				   const struct dev_pm_ops *pm)
 {
