@@ -87,7 +87,7 @@ static inline bool ext4_bio_encrypted(struct bio *bio)
 }
 
 /*
- * I/O completion handler for multipage BIOs.
+ * * I/O completion handler for multipage BIOs.
  *
  * The mpage code never puts partial pages into a BIO (except for end-of-file).
  * If a page does not map to a contiguous run of blocks then it simply falls
