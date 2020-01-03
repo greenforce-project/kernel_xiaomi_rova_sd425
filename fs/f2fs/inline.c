@@ -85,7 +85,7 @@ int f2fs_read_inline_data(struct inode *inode, struct page *page)
 {
 	struct page *ipage;
 
-	if (trace_android_fs_dataread_start_enabled()) {
+	/*if (trace_android_fs_dataread_start_enabled()) {
 		char *path, pathbuf[MAX_TRACE_PATHBUF_LEN];
 
 		path = android_fstrace_get_pathname(pathbuf,
@@ -95,12 +95,12 @@ int f2fs_read_inline_data(struct inode *inode, struct page *page)
 						page_offset(page),
 						PAGE_SIZE, current->pid,
 						path, current->comm);
-	}
+	}*/
 
 	ipage = f2fs_get_node_page(F2FS_I_SB(inode), inode->i_ino);
 	if (IS_ERR(ipage)) {
-		trace_android_fs_dataread_end(inode, page_offset(page),
-					      PAGE_SIZE);
+		//trace_android_fs_dataread_end(inode, page_offset(page),
+		//			      PAGE_SIZE);
 		unlock_page(page);
 		return PTR_ERR(ipage);
 	}
@@ -120,7 +120,7 @@ int f2fs_read_inline_data(struct inode *inode, struct page *page)
 
 	f2fs_put_page(ipage, 1);
 
-	trace_android_fs_dataread_end(inode, page_offset(page), PAGE_SIZE);
+	//trace_android_fs_dataread_end(inode, page_offset(page), PAGE_SIZE);
 	unlock_page(page);
 	return 0;
 }
