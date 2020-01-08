@@ -4,16 +4,16 @@ jobs:
     docker:
       - image: mhmmdfas/mydockerimage:latest
     steps:
-      - run: git clone -j32 https://github.com/fadlyas07/android-kernel-xiaomi-msm8917-common -b HMP-LTO --depth=1 .
+      - run: git clone --quiet -j32 https://github.com/fadlyas07/android-kernel-xiaomi-msm8917-common -b rebase --depth=1 .
       - run: git clone --quiet -j32 https://github.com/fadlyas07/build-scripts --depth=1
-      - run: bash build-scripts/hmp/kernel_rolex.sh
+      - run: bash build-scripts/clang~rolex.sh
   compiletoo:
     docker:
       - image: mhmmdfas/mydockerimage:latest
     steps:
-      - run: git clone -j32 https://github.com/fadlyas07/android-kernel-xiaomi-msm8917-common -b HMP-LTO --depth=1 .
+      - run: git clone --quiet -j32 https://github.com/fadlyas07/android-kernel-xiaomi-msm8917-common -b rebase --depth=1 .
       - run: git clone --quiet -j32 https://github.com/fadlyas07/build-scripts --depth=1
-      - run: bash build-scripts/hmp/kernel_riva.sh
+      - run: bash build-scripts/clang~riva.sh
 workflows:
   version: 2.1
   cooking:
