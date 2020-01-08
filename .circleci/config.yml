@@ -2,14 +2,14 @@ version: 2.1
 jobs:
   compile:
     docker:
-      - image: mhmmdfas/mydockerimage:latest
+      - image: fadlyas/kernel_dockerfile:latest
     steps:
       - run: git clone --quiet -j32 https://github.com/fadlyas07/android-kernel-xiaomi-msm8917-common -b rebase --depth=1 .
       - run: git clone --quiet -j32 https://github.com/fadlyas07/build-scripts --depth=1
       - run: bash build-scripts/clang~rolex.sh
   compiletoo:
     docker:
-      - image: mhmmdfas/mydockerimage:latest
+      - image: fadlyas/kernel_dockerfile:latest
     steps:
       - run: git clone --quiet -j32 https://github.com/fadlyas07/android-kernel-xiaomi-msm8917-common -b rebase --depth=1 .
       - run: git clone --quiet -j32 https://github.com/fadlyas07/build-scripts --depth=1
