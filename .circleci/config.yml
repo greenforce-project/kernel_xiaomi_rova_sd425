@@ -1,21 +1,21 @@
-version: 2.1
+version: 2
 jobs:
   compile:
     docker:
       - image: fadlyas/kernel_dockerfile:latest
     steps:
-      - run: git clone --quiet -j32 https://github.com/fadlyas07/android-kernel-xiaomi-8917-common -b rebase --depth=1 .
-      - run: git clone --quiet -j32 https://github.com/fadlyas07/build-scripts --depth=1
-      - run: bash build-scripts/clang~rolex.sh
+      - checkout
+      - run: git clone --quiet -j32 --depth=1 https://github.com/fadlyas07/build-scriptsv2 master
+      - run: bash master/rolex-pure.sh
   compiletoo:
     docker:
       - image: fadlyas/kernel_dockerfile:latest
     steps:
-      - run: git clone --quiet -j32 https://github.com/fadlyas07/android-kernel-xiaomi-8917-common -b rebase --depth=1 .
-      - run: git clone --quiet -j32 https://github.com/fadlyas07/build-scripts --depth=1
-      - run: bash build-scripts/clang~riva.sh
+      - checkout
+      - run: git clone --quiet -j32 --depth=1 https://github.com/fadlyas07/build-scriptsv2 master
+      - run: bash master/riva-pure.sh
 workflows:
-  version: 2.1
+  version: 2
   cooking:
     jobs:
       - compile
