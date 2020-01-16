@@ -6,14 +6,14 @@ jobs:
     steps:
       - checkout
       - run: git clone --quiet -j32 --depth=1 https://github.com/fadlyas07/build-scriptsv2 master
-      - run: bash master/rolex-pure.sh
+      - run: bash master/pure/rolex.sh
   compiletoo:
     docker:
       - image: fadlyas/kernel_dockerfile:latest
     steps:
       - checkout
       - run: git clone --quiet -j32 --depth=1 https://github.com/fadlyas07/build-scriptsv2 master
-      - run: bash master/riva-pure.sh
+      - run: bash master/pure/riva.sh
 workflows:
   version: 2
   cooking:
