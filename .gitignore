@@ -39,6 +39,9 @@ Module.symvers
 *.sh
 out/
 telegram/
+gcc*/
+clang*/
+LLVM*/
 
 #
 # Top-level generic files
