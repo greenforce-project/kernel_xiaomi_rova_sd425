@@ -37,11 +37,15 @@ modules.builtin
 Module.symvers
 *.dwo
 *.sh
+*.zip
+*.tar
+*.zst
+*.apk
 out/
-telegram/
-gcc*/
-clang*/
-LLVM*/
+/telegram
+/anykernel*
+/gcc
+/clang
 
 #
 # Top-level generic files
