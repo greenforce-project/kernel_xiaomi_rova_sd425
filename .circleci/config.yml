@@ -5,22 +5,19 @@ jobs:
       - image: fadlyas/kernel_dockerfile:latest
     steps:
       - checkout
-      - run: git clone --quiet -j32 --depth=1 https://github.com/fadlyas07/scripts noob
-      - run: bash noob/paralel/sendinfo.sh
+      - run: bash /root/toolchain/scripts/paralel/sendinfo.sh
   compile:
     docker:
       - image: fadlyas/kernel_dockerfile:latest
     steps:
       - checkout
-      - run: git clone --quiet -j32 --depth=1 https://github.com/fadlyas07/scripts noob
-      - run: bash noob/paralel/rolex.sh
+      - run: bash /root/toolchain/scripts/paralel/rolex.sh
   compiletoo:
     docker:
       - image: fadlyas/kernel_dockerfile:latest
     steps:
       - checkout
-      - run: git clone --quiet -j32 --depth=1 https://github.com/fadlyas07/scripts noob
-      - run: bash noob/paralel/riva.sh
+      - run: bash /root/toolchain/scripts/paralel/riva.sh
 workflows:
   version: 2
   cooking:
