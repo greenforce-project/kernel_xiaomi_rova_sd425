@@ -108,7 +108,7 @@ static void check_dsi_ctrl_status(struct work_struct *work)
 	pdsi_status->mfd->mdp.check_dsi_status(work, interval);
 }
 
-static void disable_vsync_irq(struct work_struct *work)
+static void __maybe_unused disable_vsync_irq(struct work_struct *work)
 {
 	struct dsi_status_data *pdata;
 
