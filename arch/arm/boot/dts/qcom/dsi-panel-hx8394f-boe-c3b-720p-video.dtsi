@@ -183,7 +183,6 @@
 		qcom,mdss-dsi-init-delay-us = <50000>;
 		qcom,mdss-dsi-tx-eot-append;
 
-		qcom,esd-check-enabled;
 		qcom,mdss-dsi-panel-status-command = [06 01 00 01 05 00 01 D9
 			06 01 00 01 05 00 01 09
 			];
