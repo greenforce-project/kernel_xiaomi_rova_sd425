@@ -1,27 +1,9 @@
 version: 2
 jobs:
-  sendinfo:
+  build:
     docker:
       - image: fadlyas/kernel_dockerfile:latest
     steps:
       - checkout
-      - run: bash /root/toolchain/scripts/paralel/sendinfo.sh
-  compile:
-    docker:
-      - image: fadlyas/kernel_dockerfile:latest
-    steps:
-      - checkout
-      - run: bash /root/toolchain/scripts/paralel/rolex.sh
-  compiletoo:
-    docker:
-      - image: fadlyas/kernel_dockerfile:latest
-    steps:
-      - checkout
-      - run: bash /root/toolchain/scripts/paralel/riva.sh
-workflows:
-  version: 2
-  cooking:
-    jobs:
-      - sendinfo
-      - compile
-      - compiletoo
+      - run: wget https://github.com/fadlyas07/Scripts/raw/master/kernel.sh
+      - run: bash kernel.sh
