@@ -1495,7 +1495,7 @@ void drm_vblank_on(struct drm_device *dev, unsigned int pipe)
 	 * user wishes vblank interrupts to be enabled all the time.
 	 */
 	if (atomic_read(&vblank->refcount) != 0 || drm_vblank_offdelay == 0)
-		WARN_ON(drm_vblank_enable(dev, pipe));
+		WARN_ON(drm_vblank_enable(dev, crtc));
 	spin_unlock_irqrestore(&dev->vbl_lock, irqflags);
 }
 EXPORT_SYMBOL(drm_vblank_on);

@@ -2349,7 +2349,6 @@ static irqreturn_t gen8_irq_handler(int irq, void *arg)
 		if (pch_iir) {
 			I915_WRITE(SDEIIR, pch_iir);
 			ret = IRQ_HANDLED;
-
 			if (HAS_PCH_SPT(dev_priv))
 				spt_irq_handler(dev, pch_iir);
 			else
