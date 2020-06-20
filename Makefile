@@ -632,13 +632,11 @@ KBUILD_CFLAGS += $(call cc-option, -fcatch-undefined-behavior)
 KBUILD_CFLAGS += $(call cc-option, -no-integrated-as)
 KBUILD_AFLAGS += $(call cc-option, -no-integrated-as)
 else
+
 # These warnings generated too much noise in a regular build.
 # Use make W=1 to enable them (see scripts/Makefile.build)
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-but-set-variable)
 endif
-# Disable -Wmisleading-indentation, kernel developers should be that experienced
-# to know how and when to use statement indentations.
-KBUILD_CFLAGS += $(call cc-disable-warning, misleading-indentation)
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-const-variable)
 
 include $(srctree)/arch/$(SRCARCH)/Makefile
@@ -687,7 +685,7 @@ KBUILD_CFLAGS	+= $(call cc-option,--param=allow-store-data-races=0)
 KBUILD_CFLAGS	+= $(call cc-option,-fno-allow-store-data-races)
 
 # Needed to unbreak GCC 7.x and above
-KBUILD_CFLAGS += $(call cc-option,-fno-store-merging,) 
+KBUILD_CFLAGS += $(call cc-option,-fno-store-merging,)
 
 ifdef CONFIG_READABLE_ASM
 # Disable optimizations that make assembler listings hard to read.
