@@ -1900,7 +1900,7 @@ static int exynos_dsi_probe(struct platform_device *pdev)
 				      dsi->supplies);
 	if (ret) {
 		if (ret != -EPROBE_DEFER)
-			dev_info(&pdev->dev, "failed to get regulators: %d\n", ret);
+			dev_info(dev, "failed to get regulators: %d\n", ret);
 		return ret;
 	}
 

@@ -2214,7 +2214,6 @@ static inline u64 irq_time_read(int cpu)
 }
 #endif /* CONFIG_64BIT */
 #endif /* CONFIG_IRQ_TIME_ACCOUNTING */
-#endif /* CONFIG_SCHED_QHMP */
 
 static inline void account_reset_rq(struct rq *rq)
 {
@@ -2228,3 +2227,4 @@ static inline void account_reset_rq(struct rq *rq)
 	rq->prev_steal_time_rq = 0;
 #endif
 }
+#endif /* CONFIG_SCHED_QHMP */
