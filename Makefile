@@ -390,8 +390,9 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-format-security \
 		   -std=gnu89 $(call cc-option,-fno-PIE)
 
-
+ifeq ($(cc-name),gcc)
 KBUILD_CLFAGS += -floop-nest-optimize -fgraphite-identity -ftree-loop-distribution
+endif
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
