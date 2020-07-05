@@ -1196,13 +1196,9 @@ static struct rq *move_queued_task(struct rq *rq, struct task_struct *p, int new
 
 	dequeue_task(rq, p, 0);
 	p->on_rq = TASK_ON_RQ_MIGRATING;
-#ifdef CONFIG_SCHED_WALT
 	double_lock_balance(rq, cpu_rq(new_cpu));
-#endif
 	set_task_cpu(p, new_cpu);
-#ifdef CONFIG_SCHED_WALT
 	double_unlock_balance(rq, cpu_rq(new_cpu));
-#endif
 	raw_spin_unlock(&rq->lock);
 
 	rq = cpu_rq(new_cpu);
