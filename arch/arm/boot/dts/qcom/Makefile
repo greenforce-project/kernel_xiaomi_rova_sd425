@@ -211,7 +211,7 @@ dtb-$(CONFIG_ARCH_MSM8917) += msm8917-rumi.dtb \
 	msm8917-pmi8950-rcm.dtb \
 	msm8917-qgp-tmo.dtb \
 	msm8917-pmi8937-qrd-sku5.dtb \
-        msm8917-pmi8937-qrd-sku5_S88503.dtb \
+	msm8917-pmi8937-qrd-sku5_S88503.dtb \
 	msm8917-pmi8937-qrd-sku5_S88505.dtb \
 	apq8017-pmi8937-cdp-wcd-rome.dtb \
 	apq8017-pmi8950-cdp-wcd-rome.dtb \
@@ -287,7 +287,8 @@ dtb-$(CONFIG_ARCH_MSM8917) += msm8917-rumi.dtb \
 	mdm9206-mtp.dtb \
 	mdm9206-cdp.dtb \
 	mdm9206-mtp-sdcard.dtb \
-	mdm9206-rcm.dtb
+	mdm9206-rcm.dtb \
+	mdm9207c-mtp.dtb
 
 #dtb-$(CONFIG_ARCH_MSM8916) += msm8952-qrd-skum.dtb \
        msm8952-cdp.dtb \

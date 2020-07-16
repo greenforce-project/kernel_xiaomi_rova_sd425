@@ -187,7 +187,7 @@
 #define AC_CHG_CURRENT_SHIFT		4
 #define SMB358_IRQ_REG_COUNT		6
 #define SMB358_FAST_CHG_MIN_MA		200
-#define SMB358_FAST_CHG_MAX_MA		2000
+#define SMB358_FAST_CHG_MAX_MA		1600
 #define SMB358_FAST_CHG_SHIFT		5
 #define SMB_FAST_CHG_CURRENT_MASK	0xE0
 #define SMB358_DEFAULT_BATT_CAPACITY	10
@@ -348,11 +348,11 @@ struct irq_handler_info {
 };
 
 static int chg_current[] = {
-	300, 500, 700, 1000, 1200, 1500, 1800, 2000,
+	300, 500, 700, 1000, 1200, 1400, 1500, 1600,
 };
 
 static int fast_chg_current[] = {
-	200, 450, 600, 900, 1300, 1500, 1800, 2000,
+	200, 450, 600, 900, 1300, 1400, 1500, 1600,
 };
 
 /* add supplied to "bms" function */
@@ -1241,7 +1241,7 @@ static int get_prop_current_now(struct smb358_charger *chip)
 		} else {
 			pr_debug("No BMS supply registered return 0\n");
 		}
-	return 1000;
+	return 1500;
 }
 
 static int smb358_get_prop_charge_type(struct smb358_charger *chip)
