@@ -2030,7 +2030,7 @@ static inline void ufshcd_copy_sense_data(struct ufshcd_lrb *lrbp)
 
 		memcpy(lrbp->sense_buffer,
 			lrbp->ucd_rsp_ptr->sr.sense_data,
-			min_t(int, len_to_copy, SCSI_SENSE_BUFFERSIZE));
+			min_t(int, len_to_copy, UFSHCD_REQ_SENSE_SIZE));
 	}
 }
 
@@ -9025,7 +9025,6 @@ static int ufshcd_devfreq_target(struct device *dev,
 {
 	int ret = 0;
 	struct ufs_hba *hba = dev_get_drvdata(dev);
-
 	unsigned long irq_flags;
 	ktime_t start;
 	bool scale_up, sched_clk_scaling_suspend_work = false;
