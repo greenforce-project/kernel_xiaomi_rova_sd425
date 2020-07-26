@@ -32,8 +32,3 @@ config ZRAM_DEBUG
 	help
 	  This option adds additional debugging code to the compressed
 	  RAM block device driver.
-
-config ZRAM_DEFAULT_COMP_ALGORITHM
-	string "Default ZRAM algorithm"
-	default "lz4" if ZRAM_LZ4_COMPRESS
-	default "lzo"
