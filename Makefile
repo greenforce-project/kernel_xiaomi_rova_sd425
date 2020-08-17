@@ -670,11 +670,7 @@ else
 ifeq ($(cc-name),clang)
 KBUILD_CFLAGS	+= -O3
 else
-ifdef CONFIG_PROFILE_ALL_BRANCHES
-KBUILD_CFLAGS   += -O2
-else
 KBUILD_CFLAGS	+= -O2 -finline-functions -Wno-maybe-uninitialized
-endif
 endif
 endif
 

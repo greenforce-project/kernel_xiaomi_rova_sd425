@@ -280,7 +280,6 @@ static int l2tp_eth_create(struct net *net, struct l2tp_tunnel *tunnel,
 	struct l2tp_eth *priv;
 	struct l2tp_eth_sess *spriv;
 	int rc;
-	struct l2tp_eth_net *pn;
 
 	if (cfg->ifname) {
 		dev = dev_get_by_name(net, cfg->ifname);
