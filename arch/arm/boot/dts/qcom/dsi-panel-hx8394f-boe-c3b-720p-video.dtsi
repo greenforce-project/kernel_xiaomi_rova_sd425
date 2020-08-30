@@ -45,6 +45,7 @@
 		qcom,mdss-dsi-border-color = <0>;
 		qcom,ulps-enabled;
 		qcom,suspend-ulps-enabled;
+		qcom,panel-allow-phy-poweroff;
 		qcom,mdss-dsi-on-command = [39 01 00 00 00 00 04 B9 FF 83 94
 				05 01 00 00 78 00 02 11 00
 				05 01 00 00 14 00 02 29 00];
